@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CadEngineeringRouteImport } from './routes/cad-engineering'
+import { Route as ComputerServicesRouteImport } from './routes/computer-services'
+import { Route as GamingRouteImport } from './routes/gaming'
+import { Route as SoftwareRouteImport } from './routes/software'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CadEngineeringRoute = CadEngineeringRouteImport.update({
+  id: '/cad-engineering',
+  path: '/cad-engineering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComputerServicesRoute = ComputerServicesRouteImport.update({
+  id: '/computer-services',
+  path: '/computer-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamingRoute = GamingRouteImport.update({
+  id: '/gaming',
+  path: '/gaming',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareRoute = SoftwareRouteImport.update({
+  id: '/software',
+  path: '/software',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cad-engineering': typeof CadEngineeringRoute
+  '/computer-services': typeof ComputerServicesRoute
+  '/gaming': typeof GamingRoute
+  '/software': typeof SoftwareRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cad-engineering': typeof CadEngineeringRoute
+  '/computer-services': typeof ComputerServicesRoute
+  '/gaming': typeof GamingRoute
+  '/software': typeof SoftwareRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cad-engineering': typeof CadEngineeringRoute
+  '/computer-services': typeof ComputerServicesRoute
+  '/gaming': typeof GamingRoute
+  '/software': typeof SoftwareRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/cad-engineering' | '/computer-services' | '/gaming' | '/software'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cad-engineering' | '/computer-services' | '/gaming' | '/software'
+  id:
+    | '__root__'
+    | '/'
+    | '/cad-engineering'
+    | '/computer-services'
+    | '/gaming'
+    | '/software'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CadEngineeringRoute: typeof CadEngineeringRoute
+  ComputerServicesRoute: typeof ComputerServicesRoute
+  GamingRoute: typeof GamingRoute
+  SoftwareRoute: typeof SoftwareRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +95,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cad-engineering': {
+      id: '/cad-engineering'
+      path: '/cad-engineering'
+      fullPath: '/cad-engineering'
+      preLoaderRoute: typeof CadEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/computer-services': {
+      id: '/computer-services'
+      path: '/computer-services'
+      fullPath: '/computer-services'
+      preLoaderRoute: typeof ComputerServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gaming': {
+      id: '/gaming'
+      path: '/gaming'
+      fullPath: '/gaming'
+      preLoaderRoute: typeof GamingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software': {
+      id: '/software'
+      path: '/software'
+      fullPath: '/software'
+      preLoaderRoute: typeof SoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CadEngineeringRoute: CadEngineeringRoute,
+  ComputerServicesRoute: ComputerServicesRoute,
+  GamingRoute: GamingRoute,
+  SoftwareRoute: SoftwareRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
