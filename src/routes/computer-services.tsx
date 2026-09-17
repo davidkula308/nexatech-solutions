@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
+import computer1 from "@/assets/svc-computer-1.jpg";
+import computer2 from "@/assets/svc-computer-2.jpg";
+import computer3 from "@/assets/svc-computer-3.jpg";
+import software1 from "@/assets/svc-software-1.jpg";
+import software3 from "@/assets/svc-software-3.jpg";
+import digital1 from "@/assets/svc-digital-1.jpg";
 
 export const Route = createFileRoute("/computer-services")({
   head: () => ({
@@ -25,6 +31,7 @@ export const Route = createFileRoute("/computer-services")({
       groups={[
         {
           title: "Computer setup",
+          image: computer1,
           items: [
             "Windows installation",
             "Windows upgrades",
@@ -37,6 +44,7 @@ export const Route = createFileRoute("/computer-services")({
         {
           title: "Complete Laptop Setup",
           description: "Our most requested package for new machines.",
+          image: software1,
           items: [
             "Windows configuration",
             "Drivers",
@@ -48,6 +56,7 @@ export const Route = createFileRoute("/computer-services")({
         },
         {
           title: "Maintenance & repair",
+          image: computer2,
           items: [
             "Laptop optimization",
             "Computer cleanup",
@@ -59,6 +68,7 @@ export const Route = createFileRoute("/computer-services")({
         },
         {
           title: "Security",
+          image: software3,
           items: [
             "Antivirus installation",
             "Security configuration",
@@ -69,6 +79,7 @@ export const Route = createFileRoute("/computer-services")({
         {
           title: "Remote IT support",
           description: "No need to leave your desk.",
+          image: digital1,
           items: [
             "Secure remote sessions",
             "Software fixes",
@@ -78,6 +89,7 @@ export const Route = createFileRoute("/computer-services")({
         },
         {
           title: "Cloud setup",
+          image: computer3,
           items: ["Google Drive", "OneDrive", "Dropbox", "Scheduled backups"],
         },
       ]}

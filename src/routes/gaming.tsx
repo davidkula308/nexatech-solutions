@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
+import gameSetup from "@/assets/game-setup.jpg";
+import gameRacing from "@/assets/game-racing.jpg";
+import gameFootball from "@/assets/game-football.jpg";
+import gameAdventure from "@/assets/game-adventure.jpg";
+import gameShooter from "@/assets/game-shooter.jpg";
+import gameStrategy from "@/assets/game-strategy.jpg";
 
 export const Route = createFileRoute("/gaming")({
   head: () => ({
@@ -25,10 +31,12 @@ export const Route = createFileRoute("/gaming")({
       groups={[
         {
           title: "Game launchers",
+          image: gameSetup,
           items: ["Steam", "Epic Games", "EA app", "Ubisoft Connect", "Xbox / Game Pass app"],
         },
         {
           title: "Installation & setup",
+          image: gameShooter,
           items: [
             "PC game installation",
             "Account & library setup",
@@ -38,6 +46,7 @@ export const Route = createFileRoute("/gaming")({
         },
         {
           title: "Performance",
+          image: gameRacing,
           items: [
             "Graphics settings optimization",
             "GPU driver installation",
@@ -48,6 +57,7 @@ export const Route = createFileRoute("/gaming")({
         {
           title: "Gaming PC Setup Package",
           description: "One visit, fully playable machine.",
+          image: gameStrategy,
           items: [
             "Windows install",
             "All drivers",
@@ -57,7 +67,41 @@ export const Route = createFileRoute("/gaming")({
           ],
         },
       ]}
-      note="We only work with legitimate games, licences and official platforms."
+      samplesTitle="Game types we set up"
+      samplesIntro="A few examples of what we install and tune. Tell us the title you own and we handle the install, updates and settings."
+      samples={[
+        {
+          name: "Racing & driving simulators",
+          detail: "Wheel and controller calibration, high-frame-rate graphics presets.",
+          image: gameRacing,
+        },
+        {
+          name: "Football & sports titles",
+          detail: "Launcher accounts, controller mapping, roster updates.",
+          image: gameFootball,
+        },
+        {
+          name: "Open-world adventure & RPG",
+          detail: "Large installs, storage planning, texture and shader settings.",
+          image: gameAdventure,
+        },
+        {
+          name: "Shooters & online multiplayer",
+          detail: "Low-latency settings, network tuning, anti-cheat troubleshooting.",
+          image: gameShooter,
+        },
+        {
+          name: "Strategy & simulation",
+          detail: "Mod managers, save backups, long-session stability tuning.",
+          image: gameStrategy,
+        },
+        {
+          name: "Full gaming PC build setup",
+          detail: "Windows, drivers, launchers, controller and display configuration.",
+          image: gameSetup,
+        },
+      ]}
+      note="We only work with legitimate games, licences and official platforms. Game images shown are illustrative examples of the genres we support."
     />
   ),
 });
