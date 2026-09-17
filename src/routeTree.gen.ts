@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CadEngineeringRouteImport } from './routes/cad-engineering'
+import { Route as CadServicesRouteImport } from './routes/cad-services'
 import { Route as ComputerServicesRouteImport } from './routes/computer-services'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DigitalServicesRouteImport } from './routes/digital-services'
 import { Route as GamingRouteImport } from './routes/gaming'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as SoftwareRouteImport } from './routes/software'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,14 +29,34 @@ const CadEngineeringRoute = CadEngineeringRouteImport.update({
   path: '/cad-engineering',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CadServicesRoute = CadServicesRouteImport.update({
+  id: '/cad-services',
+  path: '/cad-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComputerServicesRoute = ComputerServicesRouteImport.update({
   id: '/computer-services',
   path: '/computer-services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalServicesRoute = DigitalServicesRouteImport.update({
+  id: '/digital-services',
+  path: '/digital-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GamingRoute = GamingRouteImport.update({
   id: '/gaming',
   path: '/gaming',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SoftwareRoute = SoftwareRouteImport.update({
@@ -44,45 +68,82 @@ const SoftwareRoute = SoftwareRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cad-engineering': typeof CadEngineeringRoute
+  '/cad-services': typeof CadServicesRoute
   '/computer-services': typeof ComputerServicesRoute
+  '/contact': typeof ContactRoute
+  '/digital-services': typeof DigitalServicesRoute
   '/gaming': typeof GamingRoute
+  '/pricing': typeof PricingRoute
   '/software': typeof SoftwareRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cad-engineering': typeof CadEngineeringRoute
+  '/cad-services': typeof CadServicesRoute
   '/computer-services': typeof ComputerServicesRoute
+  '/contact': typeof ContactRoute
+  '/digital-services': typeof DigitalServicesRoute
   '/gaming': typeof GamingRoute
+  '/pricing': typeof PricingRoute
   '/software': typeof SoftwareRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cad-engineering': typeof CadEngineeringRoute
+  '/cad-services': typeof CadServicesRoute
   '/computer-services': typeof ComputerServicesRoute
+  '/contact': typeof ContactRoute
+  '/digital-services': typeof DigitalServicesRoute
   '/gaming': typeof GamingRoute
+  '/pricing': typeof PricingRoute
   '/software': typeof SoftwareRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/cad-engineering' | '/computer-services' | '/gaming' | '/software'
+    | '/'
+    | '/cad-engineering'
+    | '/cad-services'
+    | '/computer-services'
+    | '/contact'
+    | '/digital-services'
+    | '/gaming'
+    | '/pricing'
+    | '/software'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cad-engineering' | '/computer-services' | '/gaming' | '/software'
+  to:
+    | '/'
+    | '/cad-engineering'
+    | '/cad-services'
+    | '/computer-services'
+    | '/contact'
+    | '/digital-services'
+    | '/gaming'
+    | '/pricing'
+    | '/software'
   id:
     | '__root__'
     | '/'
     | '/cad-engineering'
+    | '/cad-services'
     | '/computer-services'
+    | '/contact'
+    | '/digital-services'
     | '/gaming'
+    | '/pricing'
     | '/software'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CadEngineeringRoute: typeof CadEngineeringRoute
+  CadServicesRoute: typeof CadServicesRoute
   ComputerServicesRoute: typeof ComputerServicesRoute
+  ContactRoute: typeof ContactRoute
+  DigitalServicesRoute: typeof DigitalServicesRoute
   GamingRoute: typeof GamingRoute
+  PricingRoute: typeof PricingRoute
   SoftwareRoute: typeof SoftwareRoute
 }
 
@@ -102,6 +163,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CadEngineeringRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cad-services': {
+      id: '/cad-services'
+      path: '/cad-services'
+      fullPath: '/cad-services'
+      preLoaderRoute: typeof CadServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/computer-services': {
       id: '/computer-services'
       path: '/computer-services'
@@ -109,11 +177,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComputerServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-services': {
+      id: '/digital-services'
+      path: '/digital-services'
+      fullPath: '/digital-services'
+      preLoaderRoute: typeof DigitalServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gaming': {
       id: '/gaming'
       path: '/gaming'
       fullPath: '/gaming'
       preLoaderRoute: typeof GamingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/software': {
@@ -129,8 +218,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CadEngineeringRoute: CadEngineeringRoute,
+  CadServicesRoute: CadServicesRoute,
   ComputerServicesRoute: ComputerServicesRoute,
+  ContactRoute: ContactRoute,
+  DigitalServicesRoute: DigitalServicesRoute,
   GamingRoute: GamingRoute,
+  PricingRoute: PricingRoute,
   SoftwareRoute: SoftwareRoute,
 }
 export const routeTree = rootRouteImport
