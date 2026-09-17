@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
+import digital1 from "@/assets/svc-digital-1.jpg";
+import digital2 from "@/assets/svc-digital-2.jpg";
+import digital3 from "@/assets/svc-digital-3.jpg";
+import print1 from "@/assets/svc-print-1.jpg";
+import print2 from "@/assets/svc-print-2.jpg";
+import software2 from "@/assets/svc-software-2.jpg";
 
 export const Route = createFileRoute("/digital-services")({
   head: () => ({
@@ -25,6 +31,7 @@ export const Route = createFileRoute("/digital-services")({
       groups={[
         {
           title: "Web & online",
+          image: digital1,
           items: [
             "Website development",
             "Website maintenance",
@@ -35,10 +42,12 @@ export const Route = createFileRoute("/digital-services")({
         },
         {
           title: "Design & branding",
+          image: digital2,
           items: ["Logo design", "Posters & flyers", "Business cards", "Portfolio design"],
         },
         {
           title: "Documents",
+          image: digital3,
           items: [
             "CV design",
             "PDF editing",
@@ -50,6 +59,7 @@ export const Route = createFileRoute("/digital-services")({
         },
         {
           title: "CAD services",
+          image: print2,
           items: [
             "2D drafting",
             "Floor plans",
@@ -61,6 +71,7 @@ export const Route = createFileRoute("/digital-services")({
         },
         {
           title: "Printing & plotting",
+          image: print1,
           items: [
             "A1 / A2 / A3 printing",
             "CAD plotting",
@@ -71,6 +82,7 @@ export const Route = createFileRoute("/digital-services")({
         },
         {
           title: "Training",
+          image: software2,
           items: ["AutoCAD basics", "Revit basics", "Excel", "Photoshop", "Software tutorials"],
         },
       ]}

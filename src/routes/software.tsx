@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/site/CategoryPage";
+import software1 from "@/assets/svc-software-1.jpg";
+import software2 from "@/assets/svc-software-2.jpg";
+import software3 from "@/assets/svc-software-3.jpg";
+import computer1 from "@/assets/svc-computer-1.jpg";
+import computer3 from "@/assets/svc-computer-3.jpg";
+import digital3 from "@/assets/svc-digital-3.jpg";
 
 export const Route = createFileRoute("/software")({
   head: () => ({
@@ -25,6 +31,7 @@ export const Route = createFileRoute("/software")({
       groups={[
         {
           title: "Office & productivity",
+          image: software1,
           items: [
             "Microsoft 365",
             "Microsoft Office",
@@ -35,6 +42,7 @@ export const Route = createFileRoute("/software")({
         },
         {
           title: "Creative software",
+          image: software2,
           items: [
             "Adobe Photoshop",
             "Illustrator",
@@ -46,6 +54,7 @@ export const Route = createFileRoute("/software")({
         },
         {
           title: "Programming & technical",
+          image: software3,
           items: [
             "Visual Studio",
             "VS Code",
@@ -59,6 +68,7 @@ export const Route = createFileRoute("/software")({
         },
         {
           title: "Utilities",
+          image: computer1,
           items: [
             "PDF tools",
             "Compression software",
@@ -70,10 +80,12 @@ export const Route = createFileRoute("/software")({
         },
         {
           title: "Cloud & backup",
+          image: computer3,
           items: ["Google Drive", "OneDrive", "Dropbox", "Automatic backup setup"],
         },
         {
           title: "How it works",
+          image: digital3,
           items: [
             "Remote installation over a secure session",
             "Physical installation at our workshop",
