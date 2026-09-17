@@ -12,10 +12,10 @@ const selectClass =
 const labelClass = "block text-sm font-medium text-navy/70";
 
 export function ServiceRequest() {
-  const [service, setService] = useState(SERVICE_OPTIONS[0]);
-  const [method, setMethod] = useState(INSTALL_METHODS[0]);
-  const [device, setDevice] = useState(DEVICES[0]);
-  const [os, setOs] = useState(OPERATING_SYSTEMS[0]);
+  const [service, setService] = useState(SERVICE_OPTIONS[0]!);
+  const [method, setMethod] = useState(INSTALL_METHODS[0]!);
+  const [device, setDevice] = useState(DEVICES[0]!);
+  const [os, setOs] = useState(OPERATING_SYSTEMS[0]!);
   const [date, setDate] = useState("");
   const [phone, setPhone] = useState("");
 
